@@ -62,7 +62,7 @@ img {
 
 .header {
   background-color: var(--blanco);
-  height: 100px;
+  height: 120px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -83,13 +83,13 @@ img {
 }
 
 .contenedor-header img {
-  width: 5rem;
+  width: 7rem;
 }
 
 .contenedor-header h3 {
   border-right: medium solid var(--negro);
   color: var(--negro);
-  font-size: 1.8rem;
+  font-size: 2rem;
   padding-right: 1rem;
   font-family: "DMSans";
 }
@@ -103,7 +103,6 @@ img {
   font-size: var(--step-6);
   margin-bottom: 2rem;
   text-align: center;
-  letter-spacing: 10px;
   font-family: "Burgundia", serif;
   font-feature-settings: "ss06" 1;
   font-weight: bolder;
@@ -116,7 +115,7 @@ img {
   padding: 0 1rem;
   width: 100%;
   box-sizing: border-box;
-  margin-top: 16rem;
+  margin-top: 11rem;
 }
 
 .content-links {
