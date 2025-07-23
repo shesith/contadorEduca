@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/stylesLinks.css" />
+    <title>Archivos subidos</title>
+  </head>
+  <body>
+    <h1>Estudio Contable</h1>
+    <p>
+      Cursos de contabilidad básica para estudiantes de contabilidad, economía,
+      derecho, negocios, administración, informática, ingeniería y otras
+      carreras a fines.
+    </p>
+
+    <div class="content-img">
+      <div>
+        <img
+          src="/img/Imagen-estudio-contable.png"
+          alt="Imagen de presentacion"
+        />
+        <li>
+          <p>Servicio contable</p>
+        </li>
+      </div>
+      <div>
+        <img
+          src="/img/imagen2-estudio-contable.jpg"
+          alt="Imagen de presentacion"
+        />
+        <li>
+          <p>Servicio tributario</p>
+        </li>
+      </div>
+      <div>
+        <img src="" alt="" />
+        <li>
+          <p>Servicio laboral</p>
+        </li>
+      </div>
+    </div>
+
+    <div id="contenedor"></div>
+
+    <!-- <script>
+      fetch(
+        "https://opensheet.elk.sh/1zLSrpWTrEgjJ1tXyLbL0EBuKpxy6qXHFLq4yVJIsCVU/Hoja%201"
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+
+          const contenedor = document.getElementById("contenedor");
+          data.forEach((row) => {
+            const div = document.createElement("div");
+            div.innerHTML = `
+                  <h3>${row.nombre}</h3>
+                  <a href="${row.link}" target="_blank">Ver archivo</a>
+                `;
+            contenedor.appendChild(div);
+          });
+        })
+        .catch((error) => {
+          console.log("No se encontraron archivos disponibles");
+        });
+    </script> -->
+  </body>
+</html>

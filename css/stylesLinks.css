@@ -1,0 +1,32 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--azul-marino);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Contenido interno */
+.content-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+}
+
+.content-img img {
+  width: 24rem;
+}

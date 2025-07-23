@@ -5,9 +5,10 @@
     <title>Archivos subidos</title>
   </head>
   <body>
+    <h2>Capacitación</h2>
+
     <h1>Archivos disponibles</h1>
     <div id="contenedor"></div>
-
     <script>
       fetch(
         "https://opensheet.elk.sh/1zLSrpWTrEgjJ1tXyLbL0EBuKpxy6qXHFLq4yVJIsCVU/Hoja%201"
@@ -23,6 +24,9 @@
                 `;
             contenedor.appendChild(div);
           });
+        })
+        .catch((error) => {
+          console.log("No se encontraron archivos disponibles");
         });
     </script>
   </body>
