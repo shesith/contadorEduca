@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "Burgundia";
+  src: url("/fonts/Burgundia.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DMSans";
+  src: url("/fonts/DMSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Título base sin swash */
+.title {
+  font-family: "Burgundia", serif;
+  font-feature-settings: "liga" 1, /* ligaduras comunes */ "ss01" 1,
+    /* variante estilística 01 */ "swsh" 0; /* swashes desactivados */
+}
+
+/* Clase para aplicar swash */
+.swash {
+  font-feature-settings: "liga" 1, "ss01" 1, "swsh" 1; /* swashes activados */
+}
+
+:root {
+  --step--2: clamp(0.7rem, calc(0.87rem + -0.14vw), 0.84rem);
+  --step--1: clamp(0.94rem, calc(0.95rem + -0.01vw), 0.94rem);
+  --step-0: clamp(1.06rem, calc(1.03rem + 0.19vw), 1.25rem);
+  --step-1: clamp(1.2rem, calc(1.1rem + 0.47vw), 1.67rem);
+  --step-2: clamp(1.35rem, calc(1.17rem + 0.88vw), 2.22rem);
+  --step-3: clamp(1.51rem, calc(1.22rem + 1.45vw), 2.96rem);
+  --step-4: clamp(1.7rem, calc(1.25rem + 2.25vw), 3.95rem);
+  --step-5: clamp(1.91rem, calc(1.25rem + 3.35vw), 5.26rem);
+  --step-6: clamp(2.15rem, calc(1.18rem + 4.86vw), 7.01rem);
+  --blanco: #fff;
+  --negro: #000;
+  --azul-marino: #002f61;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--azul-marino);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.header {
+  background-color: var(--blanco);
+  height: 100px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.contenedor-header {
+  display: flex;
+  align-items: center;
+}
+
+.contenedor-header img {
+  width: 5rem;
+}
+
+.contenedor-header h3 {
+  border-right: medium solid var(--negro);
+  color: var(--negro);
+  font-size: 1.8rem;
+  padding-right: 1rem;
+  font-family: "DMSans";
+}
+
+.img-whatsapp > img {
+  width: 16rem;
+}
+
+.titulo {
+  color: var(--blanco);
+  font-size: var(--step-6);
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 10px;
+  font-family: "Burgundia", serif;
+  font-feature-settings: "ss06" 1;
+  font-weight: bolder;
+}
+
+.container {
+  max-width: 1400px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 16rem;
+}
+
+.content-links {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+  text-align: center;
+  font-family: "Burgundia", serif;
+  font-size: var(--step-2);
+}
+
+.content-links img {
+  width: 32rem;
+  border-radius: 1rem;
+  height: 20rem;
+  border: medium solid var(--blanco);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+@media (max-width: 1200px) {
+  .content-links {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .img-whatsapp {
+    display: none;
+  }
+}
