@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
       rel="stylesheet"
     />
+     <link rel="stylesheet" href="/css/stylesLinks.css">
     <title>Archivos subidos</title>
   </head>
   <body>
@@ -36,7 +37,7 @@
         </p>
       </div>
       <div class="content-img">
-        <div class="cuadro">
+        <div class="cuadro" data-modal="modal1">
           <img
             src="/img/venta-material.jpg"
             alt="Imagen de presentacion"
@@ -53,7 +54,41 @@
       </div>
     </section>
 
-    <div id="contenedor"></div>
+ <!-- Modal 1 -->
+  <div class="modal" id="modal1">
+    <div class="modal-contenido">
+      <span class="cerrar">&times;</span>
+      <h2>Venta material</h2>
+         <div id="contenedor"></div>
+    </div>
+  </div>
+
+  <script>
+  const cuadros = document.querySelectorAll('.cuadro');
+  const modales = document.querySelectorAll('.modal');
+  const botonesCerrar = document.querySelectorAll('.cerrar');
+
+  cuadros.forEach(cuadro => {
+    cuadro.addEventListener('click', () => {
+      const idModal = cuadro.getAttribute('data-modal');
+      document.getElementById(idModal).style.display = 'block';
+    });
+  });
+
+  botonesCerrar.forEach(boton => {
+    boton.addEventListener('click', () => {
+      boton.closest('.modal').style.display = 'none';
+    });
+  });
+
+  window.addEventListener('click', (e) => {
+    modales.forEach(modal => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+</script>
 
     <!-- <script>
       fetch(

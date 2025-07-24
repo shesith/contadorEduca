@@ -5,6 +5,7 @@
     <title>Capacitación</title>
     <link rel="stylesheet" href="/css/styles-capacitacion.css" />
     <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/stylesLinks.css">
   </head>
   <body>
     <header class="header">
@@ -31,7 +32,7 @@
       </p>
     </div>
     <div class="content-img">
-      <div class="capacitacion-div">
+      <div class="capacitacion-div cuadro" data-modal="modal1">
         <img
           src="/img/Imagen-estudio-contable.png"
           alt="Imagen de presentacion"
@@ -45,7 +46,7 @@
           </div>
         </div>
       </div>
-      <div class="capacitacion-div">
+      <div class="capacitacion-div cuadro" data-modal="modal2">
         <img
           src="/img/imagen2-estudio-contable.jpg"
           alt="Imagen de presentacion"
@@ -61,8 +62,55 @@
       </div>
     </div>
 
-    <div id="contenedor"></div>
+
+  <!-- Modal 1 -->
+  <div class="modal" id="modal1">
+    <div class="modal-contenido">
+      <span class="cerrar">&times;</span>
+      <h2>Tributaria basica</h2>
+         <div id="contenedor"></div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal" id="modal2">
+    <div class="modal-contenido">
+      <span class="cerrar">&times;</span>
+      <h2>Capacitaciones</h2>
+         <div id="contenedor"></div>
+    </div>
+  </div>
+
+  <script>
+  const cuadros = document.querySelectorAll('.cuadro');
+  const modales = document.querySelectorAll('.modal');
+  const botonesCerrar = document.querySelectorAll('.cerrar');
+
+  cuadros.forEach(cuadro => {
+    cuadro.addEventListener('click', () => {
+      const idModal = cuadro.getAttribute('data-modal');
+      document.getElementById(idModal).style.display = 'block';
+    });
+  });
+
+  botonesCerrar.forEach(boton => {
+    boton.addEventListener('click', () => {
+      boton.closest('.modal').style.display = 'none';
+    });
+  });
+
+  window.addEventListener('click', (e) => {
+    modales.forEach(modal => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+</script>
+
   </body>
+
+
 </html>
 
 <!-- <h2>Capacitación</h2>
