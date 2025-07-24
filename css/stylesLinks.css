@@ -48,8 +48,6 @@ img {
 
 .content-img img {
   width: 30rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .estudio-contable-desc {
@@ -58,8 +56,6 @@ img {
   color: white;
   letter-spacing: 0.3px;
   max-width: 1600px;
-  padding-left: 1rem;
-  padding-right: 1rem;
   margin: 0 auto;
   font-size: var(--step-1);
 }
