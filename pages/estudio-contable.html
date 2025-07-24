@@ -36,59 +36,82 @@
         </p>
       </div>
       <div class="content-img">
-        <div class="cuadro">
-          <img
-            src="/img/Imagen-estudio-contable.png"
-            alt="Imagen de presentacion"
-          />
-          <div class="boton">
-            <li>Servicio contable</li>
-            <div class="boton-descarga">
-            <img src="/img/boton_descarga.png" alt="boton_descarga">
-            </div>
-            </div>
-        
-        </div>
-        <div>
-          <img
-            src="/img/imagen2-estudio-contable.jpg"
-            alt="Imagen de presentacion"
-          />
-          <div class="boton">
-            <li>Servicio tributario</li>
-            <div class="boton-descarga">
-            <img src="/img/boton_descarga.png" alt="boton_descarga">
-            </div>
-            </div>
-        </div>
-        <div>
-          <img src="/img/servicio-laboral.jpg" alt="servicio-laboral" />
-            <div class="boton">
-            <li>Servicio laboral</li>
-            <div class="boton-descarga">
-            <img src="/img/boton_descarga.png" alt="boton_descarga" >
-            </div>
-            </div>
-        </div>
+       <div class="cuadro" data-modal="modal1">
+  <img src="/img/Imagen-estudio-contable.png" alt="Imagen de presentación" />
+  <div class="boton">
+    <li>Servicio contable</li>
+    <div class="boton-descarga">
+      <img src="/img/boton_descarga.png" alt="boton_descarga">
+    </div>
+  </div>
+</div>
+
+<!-- Cuadro 2 -->
+<div class="cuadro" data-modal="modal2">
+  <img src="/img/imagen2-estudio-contable.jpg" alt="Imagen de presentación" />
+  <div class="boton">
+    <li>Servicio tributario</li>
+    <div class="boton-descarga">
+      <img src="/img/boton_descarga.png" alt="boton_descarga">
+    </div>
+  </div>
+</div>
+
+<!-- Cuadro 3 -->
+<div class="cuadro" data-modal="modal3">
+  <img src="/img/servicio-laboral.jpg" alt="servicio-laboral" />
+  <div class="boton">
+    <li>Servicio laboral</li>
+    <div class="boton-descarga">
+      <img src="/img/boton_descarga.png" alt="boton_descarga">
+    </div>
+  </div>
+</div>
       </div>
     </section>
 
+   <!-- Modal 1 -->
+<div class="modal" id="modal1">
+  <div class="modal-contenido">
+    <span class="cerrar">&times;</span>
+    <h2>Servicio Contable</h2>
     <div id="contenedor"></div>
+  </div>
+</div>
 
-    <!-- <script>
+<!-- Modal 2 -->
+<div class="modal" id="modal2">
+  <div class="modal-contenido">
+    <span class="cerrar">&times;</span>
+    <h2>Servicio Tributario</h2>
+    <p>Detalles del servicio tributario.</p>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal" id="modal3">
+  <div class="modal-contenido">
+    <span class="cerrar">&times;</span>
+    <h2>Servicio Laboral</h2>
+    <p>Detalles del servicio laboral.</p>
+  </div>
+</div>
+
+    <script>
       fetch(
         "https://opensheet.elk.sh/1zLSrpWTrEgjJ1tXyLbL0EBuKpxy6qXHFLq4yVJIsCVU/Hoja%201"
         )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
-
           const contenedor = document.getElementById("contenedor");
           data.forEach((row) => {
             const div = document.createElement("div");
             div.innerHTML = `
-                  <h3>${row.nombre}</h3>
-                  <a href="${row.link}" target="_blank">Ver archivo</a>
+                  
+                  <div style="display: flex; gap: 0.3rem; margin-bottom: 0.5rem">
+                    <img style="width: 2rem;" src="/img/boton-descarga2.png" alt="Descargar" />
+                    <a href="${row.link}" target="_blank">${row.nombre}</a>
+                  </div>
                 `;
             contenedor.appendChild(div);
           });
@@ -96,6 +119,33 @@
         .catch((error) => {
           console.log("No se encontraron archivos disponibles");
         });
-    </script> -->
+    </script>
+
+    <script>
+  const cuadros = document.querySelectorAll('.cuadro');
+  const modales = document.querySelectorAll('.modal');
+  const botonesCerrar = document.querySelectorAll('.cerrar');
+
+  cuadros.forEach(cuadro => {
+    cuadro.addEventListener('click', () => {
+      const idModal = cuadro.getAttribute('data-modal');
+      document.getElementById(idModal).style.display = 'block';
+    });
+  });
+
+  botonesCerrar.forEach(boton => {
+    boton.addEventListener('click', () => {
+      boton.closest('.modal').style.display = 'none';
+    });
+  });
+
+  window.addEventListener('click', (e) => {
+    modales.forEach(modal => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+</script>
   </body>
 </html>

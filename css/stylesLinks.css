@@ -44,6 +44,7 @@ img {
   justify-content: center;
   align-items: center;
   gap: 4rem;
+  cursor: pointer;
 }
 
 .content-img img {
@@ -75,19 +76,41 @@ li {
   color: white;
 }
 
+.boton > li {
+  font-size: var(--step-1);
+}
+
 .boton {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-.boton > li {
-  font-size: var(--step-1);
-}
-
 .boton-descarga {
   width: 1.5rem;
   height: 1.5rem;
+}
+
+.cuadro {
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cuadro:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+  animation: resplandor 1.2s infinite alternate;
+}
+
+@keyframes resplandor {
+  from {
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+  }
+  to {
+    box-shadow: 0 12px 25px rgba(0, 123, 255, 0.6);
+  }
 }
 
 @media (min-width: 768px) {
