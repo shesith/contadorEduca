@@ -1,0 +1,100 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --step--2: clamp(0.7rem, calc(0.87rem + -0.14vw), 0.84rem);
+  --step--1: clamp(0.94rem, calc(0.95rem + -0.01vw), 0.94rem);
+  --step-0: clamp(1.06rem, calc(1.03rem + 0.19vw), 1.25rem);
+  --step-1: clamp(1.2rem, calc(1.1rem + 0.47vw), 1.67rem);
+  --step-2: clamp(1.35rem, calc(1.17rem + 0.88vw), 2.22rem);
+  --step-3: clamp(1.51rem, calc(1.22rem + 1.45vw), 2.96rem);
+  --step-4: clamp(1.7rem, calc(1.25rem + 2.25vw), 3.95rem);
+  --step-5: clamp(1.91rem, calc(1.25rem + 3.35vw), 5.26rem);
+  --step-6: clamp(2.15rem, calc(1.18rem + 4.86vw), 7.01rem);
+  --blanco: #fff;
+  --negro: #000;
+  --azul-marino: #002f61;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--azul-marino);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.subrayado {
+  text-decoration: underline;
+}
+
+/* Contenido interno */
+.content-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 4rem;
+}
+
+.content-img img {
+  width: 30rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.estudio-contable-desc {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  letter-spacing: 0.3px;
+  max-width: 1600px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+  font-size: var(--step-1);
+}
+
+.estudio-contable-desc h1 {
+  margin-bottom: 0;
+}
+
+body {
+  font-family: "Garamond", serif;
+  font-size: 1.5rem;
+}
+
+li {
+  margin: 0.5rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.boton > li {
+  font-size: var(--step-1);
+}
+
+.boton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.boton-descarga {
+  width: 3.5rem;
+  height: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .content-img {
+    flex-direction: row;
+  }
+}
