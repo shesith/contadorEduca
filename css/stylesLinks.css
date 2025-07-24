@@ -79,18 +79,17 @@ li {
   color: white;
 }
 
+.boton > li {
+  font-size: var(--step-1);
+}
+
 .boton {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-.boton > li {
-  font-size: var(--step-1);
-}
-
 .boton-descarga {
-  width: 1.5rem;
+  width: 3.5rem;
   height: 1.5rem;
 }
 

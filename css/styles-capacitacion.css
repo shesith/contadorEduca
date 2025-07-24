@@ -1,0 +1,72 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: var(--azul-marino);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+.subrayado {
+  text-decoration: underline;
+}
+
+/* Contenido interno */
+.content-img {
+  display: flex;
+
+  /* justify-content: center;
+  align-items: center;
+
+  gap: 1rem; */
+}
+
+.content-img img {
+  width: 25rem;
+}
+
+.estudio-contable-desc {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  letter-spacing: 0.3px;
+  margin: 7rem 7rem 1rem 7rem;
+}
+body {
+  font-family: "Garamond", serif;
+  font-size: 1.5rem;
+}
+
+li {
+  margin: 0.5rem;
+  font-size: 2rem;
+  color: white;
+}
+.boton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.boton-descarga {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.capacitacion-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
