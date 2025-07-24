@@ -3,40 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="/css/stylesLinks.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap"
+      rel="stylesheet"
+    />
     <title>Archivos subidos</title>
   </head>
   <body>
-    <h1>Estudio Contable</h1>
-    <p>
-      Cursos de contabilidad básica para estudiantes de contabilidad, economía,
-      derecho, negocios, administración, informática, ingeniería y otras
-      carreras a fines.
-    </p>
-
+    <header class="header">
+      <div>
+      <a href="/index.html" target="_blank" class="decoration">
+        <div class="contenedor-header">
+          <img src="/img/logo.png" alt="Logo" />
+          <h3>ContadorEduca</h3>
+        </div>
+      </a>
+      <a href="#" target="_blank">
+        <div class="img-whatsapp">
+          <img src="/img/whatsapp.png" alt="Link de Whatsapp" />
+        </div>
+        </div>
+      </a>
+    </header>
+    <div class="estudio-contable-desc">
+      <h1>Estudio Contable</h1>
+      <p class="margin">
+        Cursos de contabilidad básica para estudiantes de contabilidad,
+        economía, derecho, negocios, administración, informática, ingeniería y
+        otras carreras a fines.
+      </p>
+    </div>
     <div class="content-img">
       <div>
         <img
           src="/img/Imagen-estudio-contable.png"
           alt="Imagen de presentacion"
         />
-        <li>
-          <p>Servicio contable</p>
-        </li>
+        <div class="boton">
+        
+          <li>Servicio contable</li>
+          <div class="boton-descarga">
+          <img src="/img/boton_descarga.png" alt="boton_descarga">
+          </div>
+          </div>
+      
       </div>
       <div>
         <img
           src="/img/imagen2-estudio-contable.jpg"
           alt="Imagen de presentacion"
         />
-        <li>
-          <p>Servicio tributario</p>
-        </li>
+        <div class="boton">
+          <li>Servicio tributario</li>
+          <div class="boton-descarga">
+          <img src="/img/boton_descarga.png" alt="boton_descarga">
+          </div>
+          </div>
       </div>
       <div>
-        <img src="" alt="" />
-        <li>
-          <p>Servicio laboral</p>
-        </li>
+        <img src="/img/servicio-laboral.jpg" alt="servicio-laboral" />
+          <div class="boton">
+          <li>Servicio laboral</li>
+          <div class="boton-descarga">
+          <img src="/img/boton_descarga.png" alt="boton_descarga" >
+          </div>
+          </div>
+      
       </div>
     </div>
 
@@ -45,7 +80,7 @@
     <!-- <script>
       fetch(
         "https://opensheet.elk.sh/1zLSrpWTrEgjJ1tXyLbL0EBuKpxy6qXHFLq4yVJIsCVU/Hoja%201"
-      )
+        )
         .then((res) => res.json())
         .then((data) => {
           console.log(data);

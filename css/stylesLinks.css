@@ -18,6 +18,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+.subrayado {
+  text-decoration: underline;
+}
 
 /* Contenido interno */
 .content-img {
@@ -28,5 +31,33 @@ img {
 }
 
 .content-img img {
-  width: 24rem;
+  width: 25rem;
+}
+
+.estudio-contable-desc {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  letter-spacing: 0.3px;
+  margin: 7rem 7rem 1rem 7rem;
+}
+body {
+  font-family: "Garamond", serif;
+  font-size: 1.5rem;
+}
+
+li {
+  margin: 0.5rem;
+  font-size: 2rem;
+  color: white;
+}
+.boton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.boton-descarga {
+  width: 1.5rem;
+  height: 1.5rem;
 }

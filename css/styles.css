@@ -12,18 +12,6 @@
   font-style: normal;
 }
 
-/* Título base sin swash */
-.title {
-  font-family: "Burgundia", serif;
-  font-feature-settings: "liga" 1, /* ligaduras comunes */ "ss01" 1,
-    /* variante estilística 01 */ "swsh" 0; /* swashes desactivados */
-}
-
-/* Clase para aplicar swash */
-.swash {
-  font-feature-settings: "liga" 1, "ss01" 1, "swsh" 1; /* swashes activados */
-}
-
 :root {
   --step--2: clamp(0.7rem, calc(0.87rem + -0.14vw), 0.84rem);
   --step--1: clamp(0.94rem, calc(0.95rem + -0.01vw), 0.94rem);
@@ -76,21 +64,24 @@ img {
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
-
+.decoration {
+  text-decoration: none;
+}
 .contenedor-header {
   display: flex;
   align-items: center;
 }
 
 .contenedor-header img {
-  width: 7rem;
+  width: 7.5rem;
+  margin-right: 1rem;
 }
 
 .contenedor-header h3 {
   border-right: medium solid var(--negro);
   color: var(--negro);
   font-size: 2rem;
-  padding-right: 1rem;
+  padding-right: 1.5rem;
   font-family: "DMSans";
 }
 
