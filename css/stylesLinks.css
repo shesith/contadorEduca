@@ -61,7 +61,7 @@ img {
   padding-left: 1rem;
   padding-right: 1rem;
   margin: 0 auto;
-  font-size: var(--step-2);
+  font-size: var(--step-1);
 }
 
 .estudio-contable-desc h1 {
@@ -86,7 +86,7 @@ li {
 }
 
 .boton > li {
-  font-size: var(--step-2);
+  font-size: var(--step-1);
 }
 
 .boton-descarga {
@@ -97,7 +97,5 @@ li {
 @media (min-width: 768px) {
   .content-img {
     flex-direction: row;
-    padding-left: 0;
-    padding-right: 0;
   }
 }

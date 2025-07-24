@@ -108,8 +108,12 @@ img {
   box-sizing: border-box;
 }
 
-.margin-top {
+.margin-top-home {
   margin-top: 11rem;
+}
+
+.margin-top {
+  margin-top: 8rem;
 }
 
 .content-links {
