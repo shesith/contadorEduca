@@ -82,14 +82,17 @@ img {
   border-right: medium solid var(--negro);
   color: var(--negro);
   font-size: 2rem;
-  padding-right: 1.5rem;
+  padding-right: 2rem;
+  padding-left: 1rem;
   font-family: "DMSans";
-  padding: 0.5rem;
-  transition: transform 0.3s ease;
 }
 
 .contenedor-header h3:hover {
   transform: scale(1.1);
+  color: #ffffff;
+  text-shadow: 0 0 5px #013141, 0 0 10px #003a4d, 0 0 15px #003647,
+    0 0 20px #002e3d;
+  transition: all 0.3s ease;
 }
 
 .img-whatsapp {
