@@ -19,21 +19,6 @@
   --azul-marino: #02002e;
 }
 
-html {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-  background-color: var(--azul-marino);
-  color: white;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
 .subrayado {
   text-decoration: underline;
 }
