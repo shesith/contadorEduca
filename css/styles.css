@@ -110,6 +110,7 @@ img {
 .img-whatsapp {
   display: flex;
   align-items: center;
+  gap: 0.3rem;
 }
 
 .whatsapp {
@@ -131,7 +132,23 @@ img {
   transform: scale(1.1);
   opacity: 0.8;
 }
-
+.tiktok {
+  width: 2.4rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.tiktok:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+.youtube {
+  width: 2.4rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  margin-left: 5px;
+}
+.youtube:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
 .facebook {
   width: 3rem;
   transition: transform 0.3s ease, opacity 0.3s ease;
