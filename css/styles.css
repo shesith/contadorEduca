@@ -90,8 +90,8 @@ img {
 .contenedor-header h3:hover {
   transform: scale(1.1);
   color: #ffffff;
-  text-shadow: 0 0 5px #013141, 0 0 10px #003a4d, 0 0 15px #003647,
-    0 0 20px #002e3d;
+  text-shadow: 0 0 5px #002734, 0 0 10px #002937, 0 0 15px #002b38,
+    0 0 20px #00232e;
   transition: all 0.3s ease;
 }
 
