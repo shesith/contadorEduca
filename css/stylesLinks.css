@@ -119,6 +119,7 @@ li {
     animation: resplandor 1.2s infinite alternate;
   }
 }
+
 footer {
   margin-top: 2rem;
   background-color: var(--blanco);
