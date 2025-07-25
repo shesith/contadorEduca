@@ -27,6 +27,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   background-color: var(--azul-marino);
+  color: white;
 }
 
 img {
@@ -59,6 +60,7 @@ img {
   max-width: 1600px;
   margin: 0 auto;
   font-size: var(--step-1);
+  padding: 2rem;
 }
 
 .estudio-contable-desc h1 {
