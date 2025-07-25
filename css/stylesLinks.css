@@ -98,12 +98,6 @@ li {
   border-radius: 10px;
 }
 
-.cuadro:hover {
-  transform: translateY(-8px) scale(1.03);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-  animation: resplandor 1.2s infinite alternate;
-}
-
 @keyframes resplandor {
   from {
     box-shadow: 0 8px 20px;
@@ -116,5 +110,11 @@ li {
 @media (min-width: 768px) {
   .content-img {
     flex-direction: row;
+  }
+
+  .cuadro:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+    animation: resplandor 1.2s infinite alternate;
   }
 }
