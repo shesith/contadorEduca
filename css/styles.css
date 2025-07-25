@@ -200,6 +200,7 @@ img {
   width: 80%;
   max-width: 700px;
   position: relative;
+  color: black;
 }
 
 /* Botón cerrar (X) */
