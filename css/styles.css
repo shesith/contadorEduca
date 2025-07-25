@@ -93,9 +93,10 @@ img {
 
 .contenedor-header h3 {
   color: var(--negro);
-  font-size: 1rem;
+  font-size: 1.5rem;
   padding-right: 1rem;
   font-family: "DMSans";
+  margin: 0;
 }
 
 .contenedor-header h3:hover {
