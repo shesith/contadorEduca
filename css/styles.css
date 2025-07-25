@@ -57,6 +57,8 @@ img {
   background-color: var(--blanco);
   height: 120px;
   position: fixed;
+  display: flex;
+  justify-content: center;
   top: 0;
   width: 100%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -65,30 +67,33 @@ img {
 
 .header > div {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  width: 100%;
   margin-left: 1.5rem;
   margin-right: 1.5rem;
 }
+
 .decoration {
   text-decoration: none;
 }
 .contenedor-header {
   display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 .contenedor-header img {
-  width: 7.5rem;
+  width: 4.5rem;
   margin-right: 1rem;
 }
 
 .contenedor-header h3 {
-  border-right: medium solid var(--negro);
   color: var(--negro);
-  font-size: 2rem;
-  padding-right: 2rem;
-  padding-left: 1rem;
+  font-size: 1rem;
+  padding-right: 1rem;
   font-family: "DMSans";
 }
 
@@ -106,7 +111,7 @@ img {
 }
 
 .whatsapp {
-  width: 18rem;
+  width: 12rem;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -116,7 +121,7 @@ img {
 }
 
 .instagram {
-  width: 4rem;
+  width: 2.5rem;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -126,7 +131,7 @@ img {
 }
 
 .facebook {
-  width: 5rem;
+  width: 3rem;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -272,6 +277,11 @@ footer {
     gap: 10px;
     margin-bottom: 10px;
   }
+
+  .contenedor-header {
+    display: flex;
+    align-items: center;
+  }
 }
 
 @media (max-width: 1200px) {
@@ -279,8 +289,21 @@ footer {
     flex-direction: column;
     gap: 2rem;
   }
+}
 
-  .img-whatsapp {
-    display: none;
+@media (min-width: 765px) {
+  .header {
+    justify-content: start;
+    width: 100%;
+  }
+
+  .header > div {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contenedor-header h3 {
+    border-right: medium solid var(--negro);
+    font-size: 1.8rem;
   }
 }
