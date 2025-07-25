@@ -230,8 +230,10 @@ footer {
   padding: 40px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  align-items: center !important;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
 .footer-links {
@@ -247,6 +249,7 @@ footer {
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-family: "DM Sans", sans-serif;
 }
 
 .footer-links a:hover {
@@ -265,24 +268,6 @@ footer {
   width: 2.5rem;
   height: auto;
   margin-right: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  .contenedor-header {
-    display: flex;
-    align-items: center;
-  }
 }
 
 @media (max-width: 1200px) {
@@ -306,5 +291,9 @@ footer {
   .contenedor-header h3 {
     border-right: medium solid var(--negro);
     font-size: 1.8rem;
+  }
+
+  footer {
+    justify-content: space-between;
   }
 }
