@@ -48,6 +48,7 @@ img {
 
 .content-img img {
   width: 30rem;
+  border-radius: 10px;
 }
 
 .estudio-contable-desc {
@@ -103,7 +104,7 @@ li {
 
 @keyframes resplandor {
   from {
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 8px 20px;
   }
   to {
     box-shadow: 0 12px 25px rgba(0, 123, 255, 0.6);
