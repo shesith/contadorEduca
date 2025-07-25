@@ -16,7 +16,7 @@
   --step-6: clamp(2.15rem, calc(1.18rem + 4.86vw), 7.01rem);
   --blanco: #fff;
   --negro: #000;
-  --azul-marino: #002f61;
+  --azul-marino: #02002e;
 }
 
 html {
@@ -48,6 +48,7 @@ img {
 
 .content-img img {
   width: 30rem;
+  border-radius: 10px;
 }
 
 .estudio-contable-desc {
@@ -97,7 +98,7 @@ li {
 
 @keyframes resplandor {
   from {
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+    box-shadow: 0 8px 20px;
   }
   to {
     box-shadow: 0 12px 25px rgba(0, 123, 255, 0.6);

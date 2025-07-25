@@ -82,14 +82,17 @@ img {
   border-right: medium solid var(--negro);
   color: var(--negro);
   font-size: 2rem;
-  padding-right: 1.5rem;
+  padding-right: 2rem;
+  padding-left: 1rem;
   font-family: "DMSans";
-  padding: 0.5rem;
-  transition: transform 0.3s ease;
 }
 
 .contenedor-header h3:hover {
   transform: scale(1.1);
+  color: #ffffff;
+  text-shadow: 0 0 5px #0b3a66, 0 0 10px #09355e, 0 0 15px #052e53,
+    0 0 20px #083056;
+  transition: all 0.3s ease;
 }
 
 .img-whatsapp {
@@ -99,14 +102,32 @@ img {
 
 .whatsapp {
   width: 18rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.whatsapp:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
 }
 
 .instagram {
   width: 4rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.instagram:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
 .facebook {
   width: 5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.facebook:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
 }
 
 .titulo {
@@ -195,7 +216,7 @@ img {
 footer {
   margin-top: 2rem;
   background-color: var(--blanco);
-  padding: 20px 40px;
+  padding: 40px 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -217,8 +238,9 @@ footer {
 
 .footer-links a {
   color: var(--negro);
-  text-decoration: none;
+  font-family: "DMSans";
   font-size: 16px;
+  font-weight: bold;
   transition: color 0.3s ease;
 }
 
@@ -227,8 +249,18 @@ footer {
 }
 
 .footer-copy {
-  font-size: 14px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
   margin-top: 10px;
+  font-family: "DMSans";
+  font-weight: bold;
+}
+
+.footer-copy img {
+  width: 2.5rem;
+  height: auto;
+  margin-right: 0.5rem;
 }
 
 @media (max-width: 600px) {
