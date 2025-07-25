@@ -19,18 +19,6 @@
   --azul-marino: #02002e;
 }
 
-html {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  overflow-x: hidden;
-  background-color: #02002e !important;
-  color: white;
-  min-height: 100vh;
-}
-
 img {
   max-width: 100%;
   height: auto;
