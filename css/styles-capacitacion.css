@@ -13,7 +13,34 @@ body {
   overflow-x: hidden;
   background-color: var(--azul-marino);
 } */
+@font-face {
+  font-family: "Burgundia";
+  src: url("/fonts/Burgundia.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "DMSans";
+  src: url("/fonts/DMSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --step--2: clamp(0.7rem, calc(0.87rem + -0.14vw), 0.84rem);
+  --step--1: clamp(0.94rem, calc(0.95rem + -0.01vw), 0.94rem);
+  --step-0: clamp(1.06rem, calc(1.03rem + 0.19vw), 1.25rem);
+  --step-1: clamp(1.2rem, calc(1.1rem + 0.47vw), 1.67rem);
+  --step-2: clamp(1.35rem, calc(1.17rem + 0.88vw), 2.22rem);
+  --step-3: clamp(1.51rem, calc(1.22rem + 1.45vw), 2.96rem);
+  --step-4: clamp(1.7rem, calc(1.25rem + 2.25vw), 3.95rem);
+  --step-5: clamp(1.91rem, calc(1.25rem + 3.35vw), 5.26rem);
+  --step-6: clamp(2.15rem, calc(1.18rem + 4.86vw), 7.01rem);
+  --blanco: #fff;
+  --negro: #000;
+  --gris: #808080;
+  --azul-marino: #02002e;
+}
 img {
   max-width: 100%;
   height: auto;
@@ -112,6 +139,26 @@ li {
   margin: 0.5rem;
   font-size: 2rem;
   color: white;
+}
+/* Contenido del modal */
+.modal-contenido {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 40px;
+  width: 80%;
+  max-width: 700px;
+  position: relative;
+  color: black;
+}
+
+/* Botón cerrar (X) */
+.cerrar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 48px;
+  color: gray;
+  cursor: pointer;
 }
 .boton {
   display: flex;
