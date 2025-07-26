@@ -107,6 +107,31 @@
   </div>
 
   <script>
+      fetch(
+        "https://opensheet.elk.sh/1SVcqDoAf_S-LK0iHG0Gvw6-fc2PwfN7C9MwSlRxYR2c/venta%20de%20material"
+        )
+        .then((res) => res.json())
+        .then((data) => {
+          const contenedor = document.getElementById("contenedor");
+          data.forEach((row) => {
+            const div = document.createElement("div");
+            div.innerHTML = `
+                  
+                  <div style="display: flex; gap: 0.3rem; margin-bottom: 0.5rem">
+                    <img style="width: 2rem;" src="/img/boton-descarga2.png" alt="Descargar" />
+                    <a href="${row.link}" target="_blank">${row.nombre}</a>
+                  </div>
+                `;
+            contenedor.appendChild(div);
+          });
+        })
+        .catch((error) => {
+          console.log("No se encontraron archivos disponibles");
+        });
+    </script>
+    
+
+  <script>
   const cuadros = document.querySelectorAll('.cuadro');
   const modales = document.querySelectorAll('.modal');
   const botonesCerrar = document.querySelectorAll('.cerrar');
@@ -134,28 +159,7 @@
   
 </script>
 
-    <!-- <script>
-      fetch(
-        "https://opensheet.elk.sh/1zLSrpWTrEgjJ1tXyLbL0EBuKpxy6qXHFLq4yVJIsCVU/Hoja%201"
-        )
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-
-          const contenedor = document.getElementById("contenedor");
-          data.forEach((row) => {
-            const div = document.createElement("div");
-            div.innerHTML = `
-                  <h3>${row.nombre}</h3>
-                  <a href="${row.link}" target="_blank">Ver archivo</a>
-                `;
-            contenedor.appendChild(div);
-          });
-        })
-        .catch((error) => {
-          console.log("No se encontraron archivos disponibles");
-        });
-    </script> -->
+   
     <footer>
       <div class="footer-links">
         <a href="https://www.sunat.gob.pe/" target="_blank" rel="noopener"

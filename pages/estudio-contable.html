@@ -129,7 +129,7 @@
   <div class="modal-contenido">
     <span class="cerrar">&times;</span>
     <h2>Servicio Tributario</h2>
-    <p>Detalles del servicio tributario.</p>
+    <div id="contenedor2"></div>
   </div>
 </div>
 
@@ -138,17 +138,63 @@
   <div class="modal-contenido">
     <span class="cerrar">&times;</span>
     <h2>Servicio Laboral</h2>
-    <p>Detalles del servicio laboral.</p>
+    <div id="contenedor3"></div>
   </div>
 </div>
 
     <script>
       fetch(
-        "https://opensheet.elk.sh/1zLSrpWTrEgjJ1tXyLbL0EBuKpxy6qXHFLq4yVJIsCVU/Hoja%201"
+        "https://opensheet.elk.sh/1SVcqDoAf_S-LK0iHG0Gvw6-fc2PwfN7C9MwSlRxYR2c/servicio%20contable"
         )
         .then((res) => res.json())
         .then((data) => {
           const contenedor = document.getElementById("contenedor");
+          data.forEach((row) => {
+            const div = document.createElement("div");
+            div.innerHTML = `
+                  
+                  <div style="display: flex; gap: 0.3rem; margin-bottom: 0.5rem">
+                    <img style="width: 2rem;" src="/img/boton-descarga2.png" alt="Descargar" />
+                    <a href="${row.link}" target="_blank">${row.nombre}</a>
+                  </div>
+                `;
+            contenedor.appendChild(div);
+          });
+        })
+        .catch((error) => {
+          console.log("No se encontraron archivos disponibles");
+        });
+    </script>
+    <script>
+      fetch(
+        "https://opensheet.elk.sh/1SVcqDoAf_S-LK0iHG0Gvw6-fc2PwfN7C9MwSlRxYR2c/servicio%20tributario"
+        )
+        .then((res) => res.json())
+        .then((data) => {
+          const contenedor = document.getElementById("contenedor2");
+          data.forEach((row) => {
+            const div = document.createElement("div");
+            div.innerHTML = `
+                  
+                  <div style="display: flex; gap: 0.3rem; margin-bottom: 0.5rem">
+                    <img style="width: 2rem;" src="/img/boton-descarga2.png" alt="Descargar" />
+                    <a href="${row.link}" target="_blank">${row.nombre}</a>
+                  </div>
+                `;
+            contenedor.appendChild(div);
+          });
+        })
+        .catch((error) => {
+          console.log("No se encontraron archivos disponibles");
+        });
+    </script>
+    <script>
+      fetch(
+        "https://opensheet.elk.sh/1SVcqDoAf_S-LK0iHG0Gvw6-fc2PwfN7C9MwSlRxYR2c/servicio%20laboral"
+        )
+        .then((res) => res.json())
+        .then((data) => {
+          const contenedor = document.getElementById("contenedor3");
           data.forEach((row) => {
             const div = document.createElement("div");
             div.innerHTML = `
