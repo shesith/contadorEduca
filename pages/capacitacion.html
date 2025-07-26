@@ -171,23 +171,32 @@
       fetch(
         "https://opensheet.elk.sh/1SVcqDoAf_S-LK0iHG0Gvw6-fc2PwfN7C9MwSlRxYR2c/cursos%20de%20contabilidad%20tributaria"
       )
-        .then((res) => res.json())
+        .then((res) => {
+          if (!res.ok) throw new Error('Network response was not ok');
+          return res.json();
+        })
         .then((data) => {
           const contenedor = document.getElementById("contenedor");
-          data.forEach((row) => {
-            const div = document.createElement("div");
-            div.innerHTML = `
-
+          if (data && data.length > 0) {
+            data.forEach((row) => {
+              if (row.nombre && row.link) {
+                const div = document.createElement("div");
+                div.innerHTML = `
                   <div style="display: flex; gap: 0.3rem; margin-bottom: 0.5rem">
                     <img style="width: 2rem;" src="/img/boton-descarga2.png" alt="Descargar" />
                     <a href="${row.link}" target="_blank">${row.nombre}</a>
                   </div>
                 `;
-            contenedor.appendChild(div);
-          });
+                contenedor.appendChild(div);
+              }
+            });
+          } else {
+            contenedor.innerHTML = '<p>No hay archivos disponibles</p>';
+          }
         })
         .catch((error) => {
-          console.log("No se encontraron archivos disponibles");
+          console.error('Error:', error);
+          document.getElementById("contenedor").innerHTML = '<p>Error al cargar archivos</p>';
         });
     </script>
 
@@ -257,28 +266,6 @@
         ContadorEduca
       </div>
     </footer>
-    <script>
-      fetch(
-        "https://opensheet.elk.sh/1SVcqDoAf_S-LK0iHG0Gvw6-fc2PwfN7C9MwSlRxYR2c/cursos%de%contabilidad%tributaria"
-      )
-        .then((res) => res.json())
-        .then((data) => {
-          const contenedor = document.getElementById("contenedor");
-          data.forEach((row) => {
-            const div = document.createElement("div");
-            div.innerHTML = `
-                  
-                  <div style="display: flex; gap: 0.3rem; margin-bottom: 0.5rem">
-                    <img style="width: 2rem;" src="/img/boton-descarga2.png" alt="Descargar" />
-                    <a href="${row.link}" target="_blank">${row.nombre}</a>
-                  </div>
-                `;
-            contenedor.appendChild(div);
-          });
-        })
-        .catch((error) => {
-          console.log("No se encontraron archivos disponibles");
-        });
-    </script>
+
   </body>
 </html>
