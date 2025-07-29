@@ -215,8 +215,8 @@
               if (row.nombre && row.link) {
                 const div = document.createElement("div");
                 div.innerHTML = `
-                  <div style="display: flex; gap: 0.3rem; margin-bottom: 0.5rem">
-                    <img style="width: 2rem;" src="/img/boton-descarga2.png" alt="Descargar" />
+                 <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
+                   <img style="width: 20px; height: 20px; object-fit: contain;" src="/img/boton-descarga2.png" alt="Descargar" />
                     <a href="${row.link}" target="_blank">${row.nombre}</a>
                   </div>
                 `;
@@ -245,8 +245,8 @@
             const div = document.createElement("div");
             div.innerHTML = `
                   
-                  <div style="display: flex; gap: 0.3rem; margin-bottom: 0.5rem">
-                    <img style="width: 2rem;" src="/img/boton-descarga2.png" alt="Descargar" />
+                  <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
+                   <img style="width: 20px; height: 20px; object-fit: contain;" src="/img/boton-descarga2.png" alt="Descargar" />
                     <a href="${row.link}" target="_blank">${row.nombre}</a>
                   </div>
                 `;
