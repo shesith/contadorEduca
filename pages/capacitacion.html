@@ -80,7 +80,7 @@
           />
           <div class="boton">
             <p class="texto text-justify">
-              Cursos de contabilidad ributaria básica para estudiantes de
+              Cursos de contabilidad tributaria básica para estudiantes de
               contabilidad, economía, derecho, negocios, administración,
               informática, ingenierías y otras carreras afines.
             </p>
@@ -187,7 +187,7 @@
     <div class="modal" id="modal1">
       <div class="modal-contenido">
         <span class="cerrar">&times;</span>
-        <h2>Tributaria basica</h2>
+        <h2 class="font-bold text-4xl">Tributaria basica</h2>
         <div id="contenedor"></div>
       </div>
     </div>
@@ -196,7 +196,7 @@
     <div class="modal" id="modal2">
       <div class="modal-contenido">
         <span class="cerrar">&times;</span>
-        <h2>Capacitaciones</h2>
+        <h2 class="font-bold text-4xl my-8">Capacitaciones</h2>
         <div id="contenedor2"></div>
       </div>
     </div>
@@ -244,10 +244,11 @@
           data.forEach((row) => {
             const div = document.createElement("div");
             div.innerHTML = `
-                  
-                  <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
+                   <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
                    <img style="width: 20px; height: 20px; object-fit: contain;" src="/img/boton-descarga2.png" alt="Descargar" />
-                    <a href="${row.link}" target="_blank">${row.nombre}</a>
+                   <a href="${row.link}" target="_blank" style="color: #2900EE; text-decoration: underline;">
+  ${row.nombre}
+</a>
                   </div>
                 `;
             contenedor.appendChild(div);

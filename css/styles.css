@@ -304,6 +304,41 @@ footer {
   }
 }
 
+@media (max-width: 764px) {
+  .img-whatsapp {
+    gap: 0.2rem;
+  }
+
+  .whatsapp {
+    width: 8rem;
+  }
+
+  .instagram {
+    width: 1.8rem;
+  }
+
+  .tiktok {
+    width: 1.7rem;
+  }
+
+  .youtube {
+    width: 1.7rem;
+    margin-left: 3px;
+  }
+
+  .facebook {
+    width: 2.2rem;
+  }
+
+  .contenedor-header img {
+    width: 5.5rem;
+  }
+
+  .contenedor-header h3 {
+    font-size: 1.3rem;
+  }
+}
+
 @media (min-width: 765px) {
   .header {
     justify-content: start;
