@@ -172,6 +172,7 @@ li {
   flex: 1;
   list-style-type: none;
   padding: 0;
+  font-size: 1.2rem !important;
 }
 .boton-descarga {
   width: 2.5rem;
