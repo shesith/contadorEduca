@@ -144,7 +144,7 @@
           </div>
         </div>
 
-        <div class="capacitacion-div cuadro" data-modal="modal2">
+        <div class="capacitacion-div cuadro" data-modal="modal3">
           <img
             style="border-radius: 10px"
             src="/img/cursos-contabilidad-basica.png"
@@ -187,7 +187,7 @@
     <div class="modal" id="modal1">
       <div class="modal-contenido">
         <span class="cerrar">&times;</span>
-        <h2 class="font-bold text-4xl">Tributaria basica</h2>
+        <h2 class="font-bold text-4xl my-8">Tributaria basica</h2>
         <div id="contenedor"></div>
       </div>
     </div>
@@ -200,26 +200,47 @@
         <div id="contenedor2"></div>
       </div>
     </div>
+
+    <!-- Modal 3 -->
+    <div class="modal" id="modal3">
+      <div class="modal-contenido">
+        <span class="cerrar">&times;</span>
+        <h2 class="font-bold text-4xl my-8">Contabilidad Básica</h2>
+        <div id="contenedor3"></div>
+      </div>
+    </div>
     <script>
+      // Modal 1: Cursos de contabilidad tributaria
       fetch(
         "https://opensheet.elk.sh/1SVcqDoAf_S-LK0iHG0Gvw6-fc2PwfN7C9MwSlRxYR2c/cursos%20de%20contabilidad%20tributaria"
       )
         .then((res) => {
+          console.log('Modal 1 response:', res);
           if (!res.ok) throw new Error("Network response was not ok");
           return res.json();
         })
         .then((data) => {
+          console.log('Modal 1 data:', data);
           const contenedor = document.getElementById("contenedor");
           if (data && data.length > 0) {
             data.forEach((row) => {
-              if (row.nombre && row.link) {
+              if (row.nombre) {
                 const div = document.createElement("div");
-                div.innerHTML = `
-                 <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
-                   <img style="width: 20px; height: 20px; object-fit: contain;" src="/img/boton-descarga2.png" alt="Descargar" />
-                    <a href="${row.link}" target="_blank">${row.nombre}</a>
-                  </div>
-                `;
+                if (row.link) {
+                  div.innerHTML = `
+                   <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
+                     <img style="width: 20px; height: 20px; object-fit: contain;" src="/img/boton-descarga2.png" alt="Descargar" />
+                      <a href="${row.link}" target="_blank">${row.nombre}</a>
+                    </div>
+                  `;
+                } else {
+                  div.innerHTML = `
+                   <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
+                     <img style="width: 20px; height: 20px; object-fit: contain;" src="/img/boton-descarga2.png" alt="Descargar" />
+                      <a href="#" style="color: #2900EE; text-decoration: underline; cursor: pointer;">${row.nombre}</a>
+                    </div>
+                  `;
+                }
                 contenedor.appendChild(div);
               }
             });
@@ -228,34 +249,99 @@
           }
         })
         .catch((error) => {
-          console.error("Error:", error);
+          console.error("Modal 1 Error:", error);
           document.getElementById("contenedor").innerHTML =
             "<p>Error al cargar archivos</p>";
         });
-    </script>
 
-    <script>
+      // Modal 2: Capacitaciones de diferentes temas
       fetch(
         "https://opensheet.elk.sh/1SVcqDoAf_S-LK0iHG0Gvw6-fc2PwfN7C9MwSlRxYR2c/capacitaciones%20de%20diferentes%20temas"
       )
-        .then((res) => res.json())
+        .then((res) => {
+          console.log('Modal 2 response:', res);
+          if (!res.ok) throw new Error("Network response was not ok");
+          return res.json();
+        })
         .then((data) => {
+          console.log('Modal 2 data:', data);
           const contenedor = document.getElementById("contenedor2");
-          data.forEach((row) => {
-            const div = document.createElement("div");
-            div.innerHTML = `
-                   <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
-                   <img style="width: 20px; height: 20px; object-fit: contain;" src="/img/boton-descarga2.png" alt="Descargar" />
-                   <a href="${row.link}" target="_blank" style="color: #2900EE; text-decoration: underline;">
-  ${row.nombre}
-</a>
-                  </div>
-                `;
-            contenedor.appendChild(div);
-          });
+          if (data && data.length > 0) {
+            data.forEach((row) => {
+              if (row.nombre) {
+                const div = document.createElement("div");
+                if (row.link) {
+                  div.innerHTML = `
+                     <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
+                     <img style="width: 20px; height: 20px; object-fit: contain;" src="/img/boton-descarga2.png" alt="Descargar" />
+                     <a href="${row.link}" target="_blank" style="color: #2900EE; text-decoration: underline;">
+    ${row.nombre}
+  </a>
+                    </div>
+                  `;
+                } else {
+                  div.innerHTML = `
+                     <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
+                     <img style="width: 20px; height: 20px; object-fit: contain;" src="/img/boton-descarga2.png" alt="Descargar" />
+                     <a href="#" style="color: #2900EE; text-decoration: underline; cursor: pointer;">${row.nombre}</a>
+                    </div>
+                  `;
+                }
+                contenedor.appendChild(div);
+              }
+            });
+          } else {
+            contenedor.innerHTML = "<p>No hay archivos disponibles</p>";
+          }
         })
         .catch((error) => {
-          console.log("No se encontraron archivos disponibles");
+          console.error("Modal 2 Error:", error);
+          document.getElementById("contenedor2").innerHTML =
+            "<p>Error al cargar archivos</p>";
+        });
+
+      // Modal 3: Curso de contabilidad básica
+      fetch(
+        "https://opensheet.elk.sh/1SVcqDoAf_S-LK0iHG0Gvw6-fc2PwfN7C9MwSlRxYR2c/Curso%20de%20contabilidad%20Basica"
+      )
+        .then((res) => {
+          console.log('Modal 3 response:', res);
+          if (!res.ok) throw new Error("Network response was not ok");
+          return res.json();
+        })
+        .then((data) => {
+          console.log('Modal 3 data:', data);
+          const contenedor = document.getElementById("contenedor3");
+          if (data && data.length > 0) {
+            data.forEach((row) => {
+              if (row.nombre) {
+                const div = document.createElement("div");
+                if (row.link) {
+                  div.innerHTML = `
+                   <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
+                     <img style="width: 20px; height: 20px; object-fit: contain;" src="/img/boton-descarga2.png" alt="Descargar" />
+                      <a href="${row.link}" target="_blank">${row.nombre}</a>
+                    </div>
+                  `;
+                } else {
+                  div.innerHTML = `
+                   <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.5rem">
+                     <img style="width: 20px; height: 20px; object-fit: contain;" src="/img/boton-descarga2.png" alt="Descargar" />
+                      <a href="#" style="color: #2900EE; text-decoration: underline; cursor: pointer;">${row.nombre}</a>
+                    </div>
+                  `;
+                }
+                contenedor.appendChild(div);
+              }
+            });
+          } else {
+            contenedor.innerHTML = "<p>No hay archivos disponibles</p>";
+          }
+        })
+        .catch((error) => {
+          console.error("Modal 3 Error:", error);
+          document.getElementById("contenedor3").innerHTML =
+            "<p>Error al cargar archivos</p>";
         });
     </script>
 
