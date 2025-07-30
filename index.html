@@ -125,10 +125,49 @@
         >
       </div>
 
+      <div class="footer-staff" id="footer-staff">
+        <!-- Los enlaces del staff profesional se cargarán aquí dinámicamente -->
+      </div>
+
       <div class="footer-copy">
         <img src="/img/logo.png" alt="Logo ContadorEduca" />
         ContadorEduca
       </div>
     </footer>
+
+    <script>
+      // Cargar staff profesional desde Google Sheets
+      fetch('https://opensheet.elk.sh/1SVcqDoAf_S-LK0iHG0Gvw6-fc2PwfN7C9MwSlRxYR2c/staff%20profesional')
+        .then(res => {
+          if (!res.ok) throw new Error('Network response was not ok');
+          return res.json();
+        })
+        .then(data => {
+          const footerStaff = document.getElementById('footer-staff');
+          if (data && data.length > 0) {
+            data.forEach(row => {
+              if (row.nombre) {
+                if (row.link) {
+                  const link = document.createElement('a');
+                  link.href = row.link;
+                  link.target = '_blank';
+                  link.rel = 'noopener';
+                  link.textContent = row.nombre;
+                  link.className = 'footer-staff-link';
+                  footerStaff.appendChild(link);
+                } else {
+                  const span = document.createElement('span');
+                  span.textContent = row.nombre;
+                  span.className = 'footer-staff-link';
+                  footerStaff.appendChild(span);
+                }
+              }
+            });
+          }
+        })
+        .catch(error => {
+          console.error('Error al cargar staff profesional:', error);
+        });
+    </script>
   </body>
 </html>
