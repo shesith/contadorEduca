@@ -228,13 +228,17 @@ img {
 
 /* Contenido del modal */
 .modal-contenido {
-  background-color: #fff;
+  background-color: #9DC3E6;
   margin: 10% auto;
   padding: 40px;
   width: 80%;
   max-width: 700px;
   position: relative;
-  color: black;
+  color: #2E5496;
+}
+
+.modal-contenido a {
+  color: #2E5496 !important;
 }
 
 /* Botón cerrar (X) */
